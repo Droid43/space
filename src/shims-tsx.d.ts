@@ -1,4 +1,6 @@
 import Vue, { VNode } from 'vue'
+import {Log} from "@/service/log";
+import {Http} from "@/network/http";
 
 declare global {
   namespace JSX {
@@ -9,5 +11,10 @@ declare global {
     interface IntrinsicElements {
       [elem: string]: any
     }
+  }
+  interface Window {
+    $log: Log
+    $http: Http
+    $api: any
   }
 }
